@@ -1,6 +1,6 @@
 package com.ltrlabs.client;
 
-import com.ltrlabs.system.api.SystemAPI;
+import com.ltrlabs.client.context.SystemContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -8,5 +8,10 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class SystemClient {
 
-    private final SystemAPI api;
+    private final SystemContext systemContext;
+
+    public void start() {
+        systemContext.execute();
+    }
+
 }
